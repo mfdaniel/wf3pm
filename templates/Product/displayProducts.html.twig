@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - List Products!{% endblock %}
+
+
+{% block body %}
+
+    {% for product in products%}
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">{{ product.getName() }}</div>
+          <div class="card-body">
+            <h5 class="card-title">Version: {{ product.getVersion() }}</h5>
+            <p class="card-text">{{ product.getDescription() }}</p>
+             <a href="{{ path('product', {'product': product.getId()}) }}" class="btn btn-primary">Details</a>
+          </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

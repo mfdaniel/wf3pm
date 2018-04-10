@@ -1,0 +1,30 @@
+HEADER:
+  HOME: Origem
+  Add Product: Adicionar Producto
+  Logout: Sair
+  Login: Entrar
+  Register: Registro
+  Footer1: Eu sei que este site foi incrível!
+  Footer2: Direitos reservdos ao Poopoo-man!
+
+  
+FORM:
+  PRODUCT:
+    NAME: O nome do producto
+    DESCRIPTION: Descrição do producto
+    VERSION: Versão
+    SUBMIT: Enviar
+    PLACEHOLDER:
+      NAME: Outro nome
+      DESCRIPTION: Sua descrição
+      VERSION: 0.0.0
+      
+  USER:
+    USERNAME: Pseudo
+    FIRSTNAME: Nome
+    LASTNAME: Nome de familia
+    EMAIL: Mail
+    PASSWORD:
+      FIRST: Primeira senha
+      SECOND: Segunda senha
+    SUBMIT: Enviar

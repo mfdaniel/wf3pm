@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Add Project!{% endblock %}
+
+
+{% block body %}
+	<div class="main">
+		<p>TEST TEST TEST</p>
+
+		{{ date().format('Y-m-d') }}
+		
+    		<div class="container">
+    		    
+		        {{ form_start(formular) }}
+    		
+    			<p>{{ form_label(formular.name) }}</p>
+    			{{ form_widget(formular.name) }}
+    
+    			<p>{{ form_label(formular.description) }}</p>
+    			{{ form_widget(formular.description) }}
+    			
+    		    <p> {{ form_label(formular.version) }}</p>
+    			{{ form_widget(formular.version) }}
+    			
+                <p>{{ form_label(formular.submit) }}</p>
+    			{{ form_widget(formular.submit) }}
+    			
+    		    {{ form_end(formular) }}
+    		    
+    		    
+    		</div>
+	</div>
+{% endblock %}

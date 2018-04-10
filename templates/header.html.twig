@@ -1,9 +1,46 @@
 <header>
-	<img src="https://egyptinnovate.com/sites/default/files/styles/details_page_image_width_654/public/Project-Management.jpg?itok=SIynbALN">
+	<span>
+		{% set ptRouteVar = {'_locale': 'pt'}|merge(routeAttr|default([])) %}
+			<a href="{{ path(app.request.attributes.get('_route'), ptRouteVar) }}">
+			<img style="width:3.5%" src="https://emojipedia-us.s3.amazonaws.com/thumbs/120/apple/129/flag-for-portugal_1f1f5-1f1f9.png">
+		</a>
+	</span>
 	
-          <ul class="nav navbar-nav navbar-right">
-          	<li><a href="">Home</a></li>
-            <li><a href="/login.php">Login</a></li>
-            <li><a href="/register.php">Register</a></li>
-          </ul>
+	
+	<span>
+		{% set enRouteVar = {'_locale': 'en'}|merge(routeAttr|default([])) %}
+			<a href="{{ path(app.request.attributes.get('_route'), enRouteVar) }}">
+			<img style="width:3.5%" src="https://emojipedia-us.s3.amazonaws.com/thumbs/120/apple/129/flag-for-united-kingdom_1f1ec-1f1e7.png">
+		</a>
+	</span>
+	
+	<img src="https://egyptinnovate.com/sites/default/files/styles/details_page_image_width_654/public/Project-Management.jpg?itok=SIynbALN">
+
+  <ul class="nav navbar-nav navbar-right">
+  	<li><a href="{{ path('homepage_translation') }}">
+  					    {{ 'HOME'|trans }}
+  					</a></li>
+  	<li><a href="{{ path('product_display') }}">Products</a></li>
+    			
+  				
+  	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+	  	<li><a href="{{ path('add_product') }}">{{ 'Add Product'|trans }}</a></li>
+	  	<li><a href="{{ path('logout') }}">{{ 'Logout'|trans }}</a></li>
+  	{% else %}				
+        <li><a href="{{ path('login') }}">{{ 'Login'|trans }}</a></li>
+        <li><a href="{{ path('register') }}">{{ 'Register'|trans }}</a></li>
+  	{% endif %}		
+  					
+
+  </ul>
 </header>
+
+{% set infoMessages = app.flashes('info') %}
+
+{% if infoMessages is not empty %}
+<div class="container">
+	{% for message in infoMessages %}
+		<p class="text-success p-1">{{ message }}</p>
+	{% endfor %}
+</div>
+{% endif %}

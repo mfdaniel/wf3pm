@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Register!{% endblock %}
+
+
+{% block body %}
+	<div class="main">
+		<p>TEST TEST TEST</p>
+
+		{{ date().format('Y-m-d') }}
+		
+    		<div class="container" id="#form_username">
+    		   
+    		   
+		        {{ form_start(formular) }}
+    		
+    			<p>{{ form_label(formular.username) }}</p>
+    			{{ form_widget(formular.username) }}
+    
+    			<p>{{ form_label(formular.firstname) }}</p>
+    			{{ form_widget(formular.firstname) }}
+    			
+    		    <p> {{ form_label(formular.lastname) }}</p>
+    			{{ form_widget(formular.lastname) }}
+    			
+    			<p> {{ form_label(formular.email) }}</p>
+    			{{ form_widget(formular.email) }}
+    			
+    			<p> {{ form_label(formular.password) }}</p>
+    			{{ form_widget(formular.password) }}
+    			
+                <p>{{ form_label(formular.submit) }}</p>
+    			{{ form_widget(formular.submit) }}
+    			
+    		    {{ form_end(formular) }}    		    
+    		    
+    		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="/js/register.js"></script>
+{% endblock %}

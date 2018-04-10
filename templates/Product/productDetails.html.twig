@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - List Products!{% endblock %}
+
+
+{% block body %}
+
+    {% if product is null  %}
+		<strong>The Id you are looking for does not exist!</strong>
+  	{% else %}				
+        <div>
+          <div>
+          	<h1>{{ product.getName() }}</h1>
+          </div>
+          <div>
+            <h5>Version: {{ product.getVersion() }}</h5>
+            <p >{{ product.getDescription() }}</p>
+        </div>
+       </div>
+       
+       <div>
+       		{{ form(form) }}
+       </div>
+       
+       
+       
+       <div class="container-fluid" ></div>
+           {% for comment in product.getComments %}
+				<div style="margin:40px;
+							border-left: 2px solid blue;
+							padding-left: 25px;">
+							
+        				<h2> {{ comment.getAuthor().getUsername() }}</h2>
+    					<p> {{ comment.getComment() }}</p>				
+    				
+           				
+                   		{% for file in comment.getFiles() %}
+                   				{% if file.getMimeType()|slice(0, 6) == 'image/' %}
+                   				 	<img 
+                   						style="width: 80%" 
+                   						class="img-responsive col-xs-12 com-md-6" 
+                   						alt="{{ file.getName() }}"
+                   						src="{{ file.getFileUrl() }}"
+                       				>
+                       			{% else %}
+                       				<a href="{{ file.getFileUrl() }}">
+                       					<button class="btn btn-success">
+                       					 	<span class="oi oi-cloud-download"></span>
+                       					 	{{ 'PRODUCT.DOWNLOAD'|trans }} {{ file.getName() }}   					
+                       					</button>
+                       				</a>
+                       			{% endif %}
+                   	    {% endfor %}
+                   	    
+				</div>
+           {% endfor %}
+       </div>
+  	{% endif %}
+{% endblock %}
+
+
+
+{% block javascripts %}
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="/js/commentFileAdder.js"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

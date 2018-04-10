@@ -1,0 +1,29 @@
+Header:
+  HOME: Home
+  Add Product: Add Product
+  Lougout: Logout
+  Login: Login
+  Register: Register
+Footer:
+  Footer1: I know this website was awesome
+  Footer2: Rights reserved to Poopoo-man!
+  
+FORM:
+  PRODUCT:
+    NAME: Name
+    DESCRIPTION: Description
+    VERSION: Project's Version
+    SUBMIT: Submit
+    PLACEHOLDER: 
+      NAME: Other name
+      DESCRIPTION: Your desciption
+      VERSION: 0.0.0
+      
+  USER:
+    USERNAME: Username
+    FIRSTNAME: Firstname
+    LASTNAME: Lastname
+    EMAIL: Email
+    PASSWORD:
+      FIRST: First Password
+      SECOND: Second Password
