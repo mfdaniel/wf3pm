@@ -1,7 +1,7 @@
 <header>
 	<span>
 		{% set ptRouteVar = {'_locale': 'pt'}|merge(routeAttr|default([])) %}
-			<a href="{{ path(app.request.attributes.get('_route'), ptRouteVar) }}">
+			<a href="{{ path(app.request.attributes.get('_route')|default('homepage_translation'), ptRouteVar) }}">
 			<img style="width:3.5%" src="https://emojipedia-us.s3.amazonaws.com/thumbs/120/apple/129/flag-for-portugal_1f1f5-1f1f9.png">
 		</a>
 	</span>
@@ -9,7 +9,7 @@
 	
 	<span>
 		{% set enRouteVar = {'_locale': 'en'}|merge(routeAttr|default([])) %}
-			<a href="{{ path(app.request.attributes.get('_route'), enRouteVar) }}">
+			<a href="{{ path(app.request.attributes.get('_route')|default('homepage_translation'), enRouteVar) }}">
 			<img style="width:3.5%" src="https://emojipedia-us.s3.amazonaws.com/thumbs/120/apple/129/flag-for-united-kingdom_1f1ec-1f1e7.png">
 		</a>
 	</span>

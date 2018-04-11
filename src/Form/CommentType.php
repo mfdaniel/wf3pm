@@ -9,19 +9,26 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use PhpParser\Comment;
 
+
 class CommentType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('comment', TextareaType::class)
+        $builder->add(
+                        'comment', 
+                        TextareaType::class,
+                        [
+                            'required'=> false 
+                ])
                 ->add(
-                    'files',
-                    CollectionType::class,
-                    [
-                        'entry_type'=> CommentFileType::class,
-                        'allow_add'=> true
-                    ]
-                    );
+                        'files',
+                        CollectionType::class,
+                        [
+                            'entry_type'=> CommentFileType::class,
+                            'allow_add'=> true
+                        ]
+                 );
+        
             if($options['stateless']){
                $builder->add('submit', SubmitType::class);
             }

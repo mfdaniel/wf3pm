@@ -1,0 +1,11 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Page not found</h1>
+	<img style="width:100%" src="http://cdn3.wpbeginner.com/wp-content/uploads/2016/03/403forbiddenerror.jpg">
+    <p>
+        The requested page couldn't be located. Checkout for any URL
+        misspelling or <a href="{{ path('homepage_translation') }}">return to the homepage</a>.
+    </p>
+{% endblock %}

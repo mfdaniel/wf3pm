@@ -1,0 +1,11 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Page not found</h1>
+	<img style="width:100%" src="https://orig00.deviantart.net/eaa7/f/2014/050/6/c/error_418_i_m_a_teapot_by_ai_15837-d7789z0.jpg">
+    <p>
+        The requested page couldn't be located. Checkout for any URL
+        misspelling or <a href="{{ path('homepage_translation') }}">return to the homepage</a>.
+    </p>
+{% endblock %}
